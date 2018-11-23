@@ -1,0 +1,43 @@
+\documentclass[
+  output=book,
+  nonflat,
+  modfonts,
+  colorlinks,
+  smallfont,
+  draftmode,
+  output=inprep,
+  widdowandorphancontrol
+]{langsci/langscibook}
+
+\usepackage{makeidx}
+\input{localseealso.tex}
+\makeindex
+
+\input{localmetadata.tex}
+\input{localpackages.tex}
+\input{localhyphenation.tex}
+\bibliography{localbibliography}
+
+% \includeonly{chapters/phonetik}
+
+\begin{document}
+
+\input{localcommands.tex}
+
+\maketitle
+\frontmatter
+
+\currentpdfbookmark{Inhalt}{name}
+\tableofcontents
+
+\include{chapters/einleitung}
+
+\mainmatter
+
+\include{chapters/einleitung}
+
+\clearpage
+
+\input{backmatter.tex}
+
+\end{document}
