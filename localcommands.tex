@@ -38,7 +38,7 @@
 
 % Use a math font that actually works! Requires unicode-math paackage.
 % https://github.com/khaledhosny/libertinus
-\setmathfont[Scale=MatchUppercase]{libertinusmath-regular.otf}
+\setmathfont[Scale=MatchUppercase]{Libertinus Math}
 
 
 \newenvironment{listLileveli}{\begin{enumerate}}{\end{enumerate}}
@@ -75,6 +75,8 @@
 %\renewcommand{\Enl}[1][1]{}
 %\renewcommand{\Np}{}
 
+\newcommand{\EGBD}{Einführung in die grammatische Beschreibung des Deutschen{}}
+\newcommand{\GR}[1][]{\ifthenelse{\equal{#1}{Gen}}{Grundrisses der deutschen Grammatik{}}{Grundriss der deutschen Grammatik{}}}
 
 % all sorts of shortcuts
 \newcommand{\HStrut}[1]{\rule{0pt}{#1pt}}
@@ -130,6 +132,9 @@
 \newcommand{\Folgt}{\ding{217}}
 
 \newcommand*\circlearound[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand{\Mark}[2][]{\textbf{#2}}
+\newcommand{\EGBDRef}[1]{EGBD, Kapitel~\textit{#1}}
 
 
 % boxes and stuff for definitions, axioms etc.
@@ -203,6 +208,15 @@
   \tblscolorbox[glass]{lsLightGray}{#1\hfill Satz~\thechapter.\arabic{dgsatz}}{#2}
 }
 
+
+\newcommand{\Merke}[2]{
+  \tblscolorbox[bulb]{lsLightGray}{#1}{#2}
+}
+
+
+\newcommand{\Voraussetzungen}[1]{
+  \tblsframebox[test]{lsYellow}{Voraussetzungen für dieses Kapitel}{#1}
+}
 
 
 \newcommand{\Zusammenfassung}[1]{
