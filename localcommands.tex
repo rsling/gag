@@ -155,6 +155,7 @@
 \newlistof[chapter]{dgdef}{dgd}{Verzeichnis der Definitionen}
 \newlistof[chapter]{dgsatz}{dgs}{Verzeichnis der Sätze}
 \newlistof[chapter]{dguebung}{dga}{Verzeichnis der Übungen}
+\newlistof{dgtext}{dgt}{Verzeichnis der Texte}
 \newlistof[chapter]{dgvertief}{dgv}{Verzeichnis der Vertiefungen}
 
 \newcounter{deskgram-ziel}
@@ -171,6 +172,7 @@
   \renewcommand*\l@dgdef{\@dottedtocline{1}{1em}{3.2em}}
   \renewcommand*\l@dgsatz{\@dottedtocline{1}{1em}{3.2em}}
   \renewcommand*\l@dguebung{\@dottedtocline{1}{1em}{3.2em}}
+  \renewcommand*\l@dgtext{\@dottedtocline{1}{1em}{3.2em}}
 \makeatother
 
 
@@ -221,7 +223,8 @@
 
 
 \newcommand{\Text}[2]{
-  \tblscolorbox[book]{lsLightGray}{#1}{#2}
+  \refstepcounter{dgtext}
+  \tblscolorbox[book]{lsLightGray}{#1\hfill Text~\arabic{dgtext}}{#2}
 }
 
 
