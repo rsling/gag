@@ -154,6 +154,7 @@
 % bookkeeping of own environments for definitions etc.
 \newlistof[chapter]{dgdef}{dgd}{Verzeichnis der Definitionen}
 \newlistof[chapter]{dgsatz}{dgs}{Verzeichnis der Sätze}
+\newlistof[chapter]{dguebung}{dga}{Verzeichnis der Übungen}
 \newlistof[chapter]{dgvertief}{dgv}{Verzeichnis der Vertiefungen}
 
 \newcounter{deskgram-ziel}
@@ -169,6 +170,7 @@
   \renewcommand*\l@table{\@dottedtocline{1}{1em}{3.2em}}
   \renewcommand*\l@dgdef{\@dottedtocline{1}{1em}{3.2em}}
   \renewcommand*\l@dgsatz{\@dottedtocline{1}{1em}{3.2em}}
+  \renewcommand*\l@dguebung{\@dottedtocline{1}{1em}{3.2em}}
 \makeatother
 
 
@@ -208,6 +210,10 @@
   \tblscolorbox[glass]{lsLightGray}{#1\hfill Satz~\thechapter.\arabic{dgsatz}}{#2}
 }
 
+\newcommand{\Uebung}[2]{
+  \refstepcounter{dguebung}
+  \tblscolorbox[test]{lsLightGray}{#1\hfill Übung~\thechapter.\arabic{dguebung}}{#2}
+}
 
 \newcommand{\Merke}[2]{
   \tblscolorbox[bulb]{lsLightGray}{#1}{#2}
@@ -220,7 +226,7 @@
 
 
 \newcommand{\Voraussetzungen}[1]{
-  \tblsframebox[test]{lsYellow}{Voraussetzungen für dieses Kapitel}{#1}
+  \tblsframebox[refresh]{lsYellow}{Voraussetzungen für dieses Kapitel}{#1}
 }
 
 
@@ -268,22 +274,6 @@
 % Excercises.
 \newcounter{Exer}[chapter]
 
-\newcommand{\Uebung}[2][\twostar]{%
-  \par\medskip\refstepcounter{Exer}\noindent\textbf{Übung~\arabic{Exer}}~#1\ %
-  \ifthenelse{\equal{#2}{}}
-  {}
-  {(Lösung auf Seite \pageref{sol:#2})\ }
-}
-
-\newcommand{\Uebungen}{
-  \clearpage
-  \section*{Übungen zu Kapitel \thechapter}
-  \markboth{Übungen zu Kapitel \thechapter}{Übungen zu Kapitel \thechapter}
-  \setcounter{equation}{0}
-}
-
-\newcommand{\Loesungen}[2][\clearpage]{#1\section*{Zu Kapitel \ref{#2}}}
-\newcommand{\Loesung}[1]{\subsection*{Übung \ref{exc:#1} (Seite \pageref{exc:#1})}}
 
 \renewcommand{\Phantom}{}
 
