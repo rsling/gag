@@ -19,13 +19,9 @@ Siehe dazu die Diskussion zur \Mark{Gespanntheit} in \EGBDRef{Phonologie}.}
 Andererseits ist das Lautsystem die Menge von Regularitäten, die auf Basis von möglichst redundanzfreien Repräsentationen von Wörtern und anderen Einheiten -- den \Mark{zugrundeliegenden Formen} -- alle konkreten phonetischen Artikulationen beschreibt.
 Ein typisches Beispiel ist die \Mark{Silbifizierung}.
 Ein Wort wie \textit{Tag} enthält im Nominativ Singular eine Silbe [taːk].
-In allen Formen des Plurals wie \textit{Tage} [taː.gə] und im Genitiv Singular \textit{Tages} [taː.gəs] ist es jedoch zweisilbig, und die Silbengrenze (wie üblich mit dem Punkt . markiert) verläuft im Stamm des Wortes.
+In allen Formen des Plurals wie \textit{Tage} [taː.gə] und im Genitiv Singular \textit{Tages} [taː.gəs] ist es jedoch zweisilbig, und die Silbengrenze (wie üblich mit dem Punkt .\ markiert) verläuft im Stamm des Wortes.
 Die Silbengrenzen können also nicht mit dem Wort (einer irgendwie gearteten Grundform) im Lexikon abgelegt sein, sondern werden erst festgelegt, wenn die Wortform morphologisch vollständig ist.
 Da die Silbengrenzen aber völlig regelhaft zugewiesen werden, braucht man eine Beschreibung des phonologischen Systems, um genau angeben zu können, wie die phonetischen Realisierungen von Wörtern und Wortformen systematisch zusammenhängen.
-
-%\Merke{Phonologisches System}{\label{merke:phonologischessystem}%
-%Das phonologische System abstrahiert von für die Bedeutung irrelevanten Variationen in der Artikulation.
-%Es besteht aus den Regularitäten, die es erlauben, alle konkreten artikulierten Formen aus möglichst redundanzfreien und abstrakten zugrundeliegenden Formen abzuleiten.}
 
 In diesem Kapitel wird das phonologische System in drei Teilbereiche eingeteilt.
 In Abschnitt~\ref{sec:phonologie:analysenzursegmentalenphonologie} werden zunächst Phänomene betrachtet, die die Abfolge von Segmenten (den kleinsten Einheiten der Phonetik und Phonologie) betreffen.
@@ -614,9 +610,168 @@ Gehen Sie Ihre Liste der ungespannten unbetonten Vokale aus Text~\ref{text:weltr
 
 \paragraph*{Sonorität}
 
+Die Sonorität ist ein universelles (also allen Sprachen gemeinsames) Phänomen.
+In Silben ordnen sich die verschiedenen Klassen von Segmenten nicht beliebig an.
+Für das Deutsche ist es ausreichend, die Klassen der Plosive (P), Frikative (F), Nasale (N), Liquide (L) und Vokale (V) zu unterscheiden, wobei die Plosive als am wenigstens \textit{sonor} und die Vokale als maximal sonor eingestuft werden (s.~Abbildung~\ref{fig:sonoritaet085}).
+Sie Sonorität steigt in jeder Silbe monoton und fällt nach dem Kern monoton (Letzteres nur, falls nach dem Kern noch Segmente folgen).
+Schematisch wird dies in Abbildung~\ref{fig:sonoritaet086} dargestellt.
+Dieses Steigen und Fallen der Sonorität kann man ungefähr mit dem Öffnen und Schließen des Vokaltrakts bei der Artikulation jeder Silbe identifizieren.
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}
+    \node (min)                             {minimal sonor};
+    \node (plo) at ([shift={( 3,0)}]   min) {\textbf{Plosive}};
+    \node (fri) at ([shift={( 0,0.5)}] plo) {\textbf{Frikative}};
+    \node (nas) at ([shift={( 0,0.5)}] fri) {\textbf{Nasale}};
+    \node (liq) at ([shift={( 0,0.5)}] nas) {\textbf{Liquide}};
+    \node (vok) at ([shift={( 0,0.5)}] liq) {\textbf{Vokale}};
+    \node (max) at ([shift={(-3,0)}]   vok) {maximal sonor};
+    \draw [->, thick] (min) to (max);
+  \end{tikzpicture}
+  \caption{Sonoritätshierarchie}
+  \label{fig:sonoritaet085}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{tikzpicture}
+    \node (P1) at (0, 0.0) {P};
+    \node (F1) at (1, 0.5) {F};
+    \node (N1) at (2, 1.0) {N};
+    \node (L1) at (3, 1.5) {L};
+    \node (V0) at (4, 2.0) {V};
+    \node (L2) at (5, 1.5) {L};
+    \node (N2) at (6, 1.0) {N};
+    \node (F2) at (7, 0.5) {F};
+    \node (P2) at (8, 0.0) {P};
+    \draw [->] (P1) to (F1);
+    \draw [->] (F1) to (N1);
+    \draw [->] (N1) to (L1);
+    \draw [->] (L1) to (V0);
+    \draw [->] (V0) to (L2);
+    \draw [->] (L2) to (N2);
+    \draw [->] (N2) to (F2);
+    \draw [->] (F2) to (P2);
+  \end{tikzpicture}
+  \caption{Sonorität für die Segmentklassen in der schematischen Silbe}
+  \label{fig:sonoritaet086}
+\end{figure}
+
+Das \textit{Sonoritätsprinzip} (oder \textit{Prinzip der Silbenkontur}) besagt, dass die Segmente in Silben der Sonoritätskontur folgen müssen, und Silben wie *[ʁka] (LPV), *[ɔpm] (VPN) oder *[lkl] (LPL) sind damit ausgeschlossen.
+
+\paragraph*{Kern}
+
+Man kann das Sonoritätsprinzip auch anders formulieren, indem man zunächst feststellt, dass jede Silbe einen Vokal enthält, der ihren \textit{Kern} bildet.%
+\footnote{Dies stimmt für den deutschen Standard, wie er hier beschrieben wurde.
+In anderen Varietäten und anderen Beschreibungen des Standards können auch silbische Liquide und Nasale im Silbenkern stehen.
+In einigen anderen Sprachen können ganz unterschiedliche Typen von Segmenten Silbenkerne bilden.}
+Vokale sind wie erwähnt die sonsorsten Segmente.
+Vor diesem vokalischen Kern stehen Konsonanten mit nach außen fallender Sonorität im sogenannten \textit{Anfangsrand}.
+Nach dem Kern stehen ggf.\ ebenfalls mit nach außen fallender Sonorität Konsonanten im sogenannten \textit{Endrand}.
+Kern und Endrand bilden zusammen den sogenannten \textit{Reim} der Silbe.
+Silben mit nicht gefülltem Endrand heißen \textit{geschlossen}, solche mit gefülltem Endrand \textit{offen}.
+
+Mit der eingeführten Terminologie können wir die Struktur einer Silbe beschreiben, unter anderem in Baumform.
+Beispiele dafür werden in \ref{fig:silbenstruktur040a} und \ref{fig:silbenstruktur040b} gezeigt.
+
+\begin{figure}[!htbp]
+  \centering
+  \centering
+  \begin{forest}
+    [Silve, calign=last
+      [Anfangsrand, ake
+        [v]
+      ]
+      [Reim
+        [Kern, ake
+          [oː]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Beispiel für Silbenstruktur (\textit{wo})}
+  \label{fig:silbenstruktur040a}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{forest}
+    [Silbe, calign=last
+      [Anfangsrand, ake, calign=first
+        [f][ʁ]
+      ]
+      [Reim, calign=first
+        [Kern,ake
+          [ɛ]
+        ]
+        [Endrand, ake, calign=last
+          [m][t]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Beispiel für Silbenstruktur (\textit{fremd})}
+  \label{fig:silbenstruktur040b}
+\end{figure}
+
+Das Prinzip des Silbenkerns besagt, dass jede Silbe einen Kern haben muss, der im deutschen Standard ein Vokal (ggf.\ ein silbischer Nasal oder Liquid) sein muss.
+Es spielt zunächst keine Rolle, ob der Kern mit einem kurzen Vokal, einem langen Vokal oder einem Diphthong gefüllt ist.
+
 \paragraph*{Präferierte Ränder}
 
+Da im Kern ein genau Vokal stehen muss, aber in den Rändern unter Umständen mehrere Konsonanten stehen, sind insbesondere die in einer Sprache möglichen Abfolge der Konsonanten in den Rändern interessant.
+Neben der Bedingung, dass stets die Sonoritätskontur eingehalten werden muss, gelten einzelsprachlich (hier also für das Deutsche) bestimmte Präferenzen.
+Wir beschreiben diese Präferenzen hier gleich unter Ausschluss der extrasilbischen Segmente (siehe unten).
+
+Im Wesentlichen ist im deutschen Kernwortschatz ein Anfangsrand, der aus zwei Segmenten besteht, mit einem äußeren Plosiv oder Frikativ gefolgt von einem Liquid besetzt.
+Typisch sind also Silben (hier Einsilbler, also einsilbige Wörter) wie \textit{treu} /trʁɔ͡ʏ/ [tʁɔ͡ʏ], \textit{kräh} /kʁɛ/ [kʁɛː], \textit{Bräu} /bʁɔ͡ʏ/ [bʁɔ͡ʏ], \textit{frei} /fʁa͡ɛ/ [fʁa͡ɛ], \textit{Klee} /kle/ [kleː], \textit{blau} /bla͡ɔ/ [bla͡ɔ], \textit{flieh} /fli/ [fliː].
+Daneben gibt es seltener die Kombination [kv] wie in \textit{Qual} /kval/ [kvaːl] und [kn] wie in \textit{Knie} /kni/ [kniː] oder der Erstsilbe von \textit{Knabe} /knabə/ [knaːbə].
+Mit Ausnahme der extrasilbischen [ʃ] wie in \textit{Sprung} /ʃpʁʊng/ [ʃpʁʊŋ] ist damit der Anfangsrand beschrieben.
+
+Der Endrand, der aus zwei Segmenten besteht, hat im Deutschen wesentlich mehr Besetzungsmöglichkeiten als der Anfangsrand.
+Sonoritätsplateaus kommen nur mit Konsonanten -- und in nicht flektierten Simplizia sehr selten -- vor wie in \textit{Abt} /apt/ [ʔapt].
+Bereits etwas häufiger (im Sinne der Typenhäufigkeit) sind Kombinationen aus Frikativ und Plosiv wie in \textit{Schaft} /ʃăft/ [ʃaft] oder \textit{Ast} /ăst/ [ʔast].
+Kombinationen aus Nasal und Frikativ wie in \textit{Ramsch} /ʁămʃ/ [ʁamʃ] oder Hanf /hănf/ [hanf] kommen vor, sind aber nicht sonderlich häufig.
+Solche aus Nasal und Plosiv sind präferiert homorgan (also am selben Artikulationsort gebildet, siehe \textit{rund} /ʁʊnd/ [ʁʊnt], \textit{Bank} /bănk/ [bank] und \textit{Klump} /klʊmp/ [klʊmp].
+Es gibt allerdings auch (in Simplizia) selten [mt] wie in \textit{Amt} /ămt/ [ʔamt].
+Ganz typisch und typenhäufig sind dann die Endränder, die spiegelbildlich zum Anfangsrand aus einem Liquid gefolgt von einem Plosiv oder Frikativ bestehen.
+Beispiele sind \textit{Bart} /băʁt/ [ba͡ət], \textit{kalt} /kălt/ [kalt], \textit{Berg} /bɛ̆ʁg/ [bɛ͡ək], \textit{welk} /vɛ̆lk/ [vɛlk], \textit{Barsch} /băʁʃ/ [ba͡əʃ], \textit{falsch} /fălʃ/ [falʃ], \textit{Torf} /tɔʁf/ [tɔ͡əf]. 
+Im Gegensatz zum Anfangsrand gibt es allerdings auch -- wiederum seltene -- Kombinationen aus Liquid und Nasal wie in \textit{Qualm} /kvălm/ [kvalm] oder \textit{Harn} /hăʁn/ [ha͡ən].
+
+Es sind also nicht alle beliebigen Kombinationen aus Segementen in den Rändern denkbar, und der Prototyp des duplexen Randes ist der aus einem äußerem Plosiv oder Frikativ und einem inneren Liquid.
+
 \paragraph*{Silbengewicht}
+
+Der Silbenreim (also die Konstituente aus Kern und Endrand) spielt an verschiedenen Stellen im System eine Rolle.
+Unter anderem ist der Reim relevant für die Bestimmung möglicher Silbentypen, wenn man die Einheit der \textit{More} -- die Einheit des \textit{Silbengewichts} -- hinzunimmt.
+Damit kann die Komplexität des Silbenreims insgesamt beschrieben werden.
+Kurze Vokale im Kern zählen eine More, lange Vokale und Diphthonge zählen zwei Moren.
+Man sieht also, dass das Gewicht der Silbe durchaus etwas mit Länge zu tun hat.
+Allerdings zählen wir jeden Konsonanten im Endrand ebenfalls mit einer More, und das Konzept der Länge ist für Konsonanten zunächst einmal nicht definiert, weswegen man auf den Begriff des Gewichts ausweicht.
+Nur der Reim zählt zum Silbengewicht, der Anfangsrand ist völlig irrelevant.
+
+Wir finden im Deutschen ein- bis dreimorige Silben.
+Zunächst wird der Kernwortschatz beschrieben.
+Einmorig sind im Kernwortschatz nur offene Schwa-Silben und unbetonte Silben mit ungespanntem Vokal (vor allem [ɪ]).%
+\footnote{Bis zur dritten Auflage wurden in EGBD die unbetonten offenen Silben mit ungespanntem Vokal nicht beschrieben.}
+Solche Schwa-Silben sind sehr häufig, zum Beispiel die Zweitsilben in \textit{Tüte} /tytə/ [ˈtyː.tə], \textit{Sahne} /zanə/ [ˈzaː.nə], \textit{Stühle} /ʃtylə/ [ˈʃtyː.lə] usw.
+Die unbetonten offenen Silben mit ungespanntem Vokal kommen vor allem in drei- oder mehrsilbigen derivierten und\slash oder flektierten Wortformen vor, zum Beispiel \textit{wenigere} /venɪgəʁə/ [ˈveː.nɪ.gə.ʁə] (Silbe [nɪ]), \textit{schwächliche} /ʃvɛ̆çlɪçə/ [ˈʃvɛç.lɪ.çə] (Silbe [lɪ]), aber auch in derivierten Wörtern wie \textit{Neunziger} /nɔ͡ʏnt͡sɪgəʁ/ [nɔ͡ʏn.t͡sɪ.gɐ] (Silbe [t͡sɪ]).%
+\footnote{In den Wörtern mit ungespanntem Vokal kein kein Silbengelenk vorliegen, weil dies nur im Trochäus auftritt.
+Die Silbifizierung *[ˈnɔ͡ʏn.t͡sɪg̣ɐ] wäre also inkorrekt.
+Das Movierungssuffix \textit{-in} hat immer einen Nebenakzent, und in den entsprechenden Silben liegt daher ein Silbengelenk vor, also \textit{Schülerinnen} /ʃyləʁɪnən/ [ˈʃyː.lə.ˌʁɪṇən].}
+Da dieser Silbentypus nicht betont sein kann, gibt es auch keine Einsilbler, die aus solchen Silben bestehen.
+
+Zweimorig sind (ob betont oder unbetont) entweder (1) offene Silben mit langem Vokal oder mit Diphthong oder (2) geschlossene Silben mit kurzem Vokal und einfach besetztem Endrand.
+Den ersten Fall illustrieren (im Einsilbler) \textit{nah} /na/ [naː], \textit{Vieh} /fi/ [fiː] und \textit{schlau} /ʃla͡ɔ/ [ʃla͡ɔ], den zweiten \textit{schlapp} /ʃlăp/ [ʃlap], \textit{Napf} /năp͡f/ [nap͡f] und \textit{Bann} /băn/ [ban].%
+\footnote{In \textit{Napf} ist [p͡f] eine Affrikate und zählt daher einmorig.}
+
+Als dreimorige Silben kommen (wiederum betont der unbetont) Silben mit kurzem Vokal und doppelt gefülltem Endrand oder Silben mit langem Vokal (bzw.\ Diphthong) und einfach gefülltem Endrand in Frage.
+Den ersten Fall bebeispielen die Einsilbler \textit{Schwank} /ʃvănk/ [ʃvaŋk], \textit{Kalb} /kălb/ [kalp] und \textit{Korb} /kɔʁb/ [kɔ͡əp], den zweiten \textit{Mus} /muz/ [muːs], \textit{lieb} /lib/ [liːp] und \textit{Hag} /hag/ [haːk].
+
+Es gibt im Deutschen also gemäß dem Prinzip der Silbenschwere nur unbetonte einmorige Silben, außerdem zweimorige und dreimorige Silben (betont oder unbetont).
+Betonte einmorige Silben wären \textit{überleicht}, vier- oder mehrmorige Silben \textit{überschwer}.
+Wie Wörter wie \textit{Herbsts} /hɛ̆ʁbztz/ [hɛ͡əpsts], das scheinbar sechsmorig zu sein scheint -- in dieses Bild passen, wird im nächsten Absatz geklärt.
 
 \paragraph*{Extrasilbizität}
 
@@ -624,10 +779,24 @@ Gehen Sie Ihre Liste der ungespannten unbetonten Vokale aus Text~\ref{text:weltr
 
 \paragraph*{Anfangsrand-Füllung}
 
+\paragraph*{Silbengelenkbildung}
+
 
 
 \section{Analysen zur Fuß- und Wortphonologie}
 \label{sec:phonologie:analysenzurfussundwortphonologie}
+
+\subsection{Prinzipien der Fuß- und Wortphonologie}
+
+\paragraph*{Akzent und Nebenakzent}
+
+\paragraph*{Stammbetonung, phonologisches Wort, prosodisches Wort}
+
+\paragraph*{Komposita}
+
+\paragraph*{Affixe und Akzent}
+
+\paragraph*{Fußbildung}
 
 
 
