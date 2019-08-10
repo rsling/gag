@@ -822,7 +822,7 @@ Extrasilbische Segmente stellen wir in Silbenbäumen wie in Abbildung~\ref{fig:e
         [t]
         [ʁ]
       ]
-      [Reim
+      [Reim, calign=first
         [Kern, ake
           [ɔ͡ʏ]
         ]
@@ -879,16 +879,271 @@ Im Fall von *[ˈʁʊ.mplɐ] wäre der Anfangsrand zwar noch mehr maximiert, aber
 
 \subsection{Prinzipien der Fuß- und Wortphonologie}
 
-\paragraph*{Akzent und Nebenakzent}
+\paragraph*{Füße und Akzent}
 
-\paragraph*{Stammbetonung, phonologisches Wort, prosodisches Wort}
+In diesem Abschnitt geht es um die phonologischen Konstituenten, die größer als Silben sind.
+Silben sind Konstituenten von \textit{Füßen}, Füße die von \textit{phonologischen Wörtern}, phonologische Wörter die von \textit{prosodischen Wörtern}.
+Die Füße sind zunächst einmal Konstituenten aus einer betonten und einer oder mehreren unbetonten Silben.
+Die Betonung nennt man üblicherweise den \textit{Akzent} und spricht demgemäß von \textit{akzentuierten Silben}.
+Präferierte Fußstrukturen wie der deutsche \textit{Trochäus} -- ein Fuß aus einer akzentuierten gefolgt von einer nicht akzentuierten Silbe -- sorgen für die rhythmische Struktur der Sprache, und sie helfen, die Wortstruktur zu dekodieren (s.\ unten).
 
-\paragraph*{Komposita}
+Für den Kernwortschatz wird hier davon ausgegangen, dass es nur Trochäen (also zweisilbige Füße mit Akzent auf der ersten Silbe) gibt.
+Viele zweisilbige Simplizia haben diese präferierte Fußstruktur, zum Beispiel \textit{Anker} /ănkəʁ/ [ˈʔaŋ.kɐ], \textit{Rübe} /ʁybə/ [ˈʁyː.bə], \textit{Tochter} /tɔçtəʁ/ [ˈtɔχ.tɐ], \textit{Humpen} /hʊmpən/ [ˈhʊm.pən], \textit{Lager} /lagəʁ/ [ˈlaː.gəʁ], \textit{Miete} /mitə/ [ˈmiː.tə], \textit{Matte} /mătə/ [ˈmaṭə], \textit{Zacken} /t͡săkən/ [ˈt͡saḳən].
+Fußstrukturen lassen sich auf Basis der Baumdarstellung von Silben ebenfalls in Bäumen darstellen wie in \ref{fig:fuesse}.
+Wir zeigen die akzentuierte Silbe dadurch an, dass der Fußknoten direkt über dem Silbenknoten der akzentuierten Silbe steht.
+Der Trochäus bildet in diesem Fall allein das phonologische Wort (den Einsilbler). 
 
-\paragraph*{Affixe und Akzent}
+\begin{figure}[!htpb]
+  \centering
+  \begin{forest}
+    [Phonologisches Wort
+      [Fuß, calign=first
+        [Silbe, calign=last
+          [Anfangsrand, ake
+            [ʁ]
+          ]
+          [Reim
+            [Kern, ake
+              [yː]
+            ]
+          ]
+        ]
+        [Silbe, calign=last
+          [Anfangsrand, ake
+            [b]
+          ]
+          [Reim
+            [Kern, ake
+              [ə]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Baumstruktur für einen Trochäus (\textit{Rübe})}
+  \label{fig:fuesse}
+\end{figure}
 
-\paragraph*{Fußbildung}
+Längere oder nicht trochäische Wörter sind entweder keine Simplizia und lassen sich auf einsilbige oder trochäische Wörter zurückführen, oder sie gehören nicht zum morpho"=phonologischen Kern des Deutschen.
+
+In einsilbigen Wörtern und in drei- oder mehrsilbigen Wörtern werden (zumindest im Kern), wenn oberflächlich ein anderer Fußtyp als ein Trochäus vorliegt, \textit{defekte Füße} und \textit{extrametrische Silben} angenommen.
+Defekte Füße sind Füße, denen eine unbetonte Silbe fehlt, und extrametrische Silben sind unbetonte Silben, die sich an einen normalen Fuß anheften, ohne zu ihm zu gehören, ähnlich wie extrasilbische Segmente an der Silbe.
+Das phonologische Wort \textit{Haus} /ha͡ɔz/ [ˈha͡ɔs] besteht aus einem defekten Trochäus, das Wort \textit{Bedutung} /bədɔ͡ʏtʊng/ [bə.ˈdɔ͡ʏ.tʊŋ] aus einem Trochäus mit vorangehender extrametrischen Silbe.
+Die Baumdarstellung erfolgt wie in \ref{fig:defekterfuss} und \ref{fig:extrametrisch}.
+
+\begin{figure}[!htpb]
+  \centering
+  \begin{forest}
+    [Phonologisches Wort
+      [Fuß
+        [Silbe, calign=last
+          [Anfangsrand, ake
+            [h]
+          ]
+          [Reim, calign=first
+            [Kern, ake
+              [a͡ɔ]
+            ]
+            [Endrand, ake
+              [s]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Einsilbler mit defektem Fuß (\textit{Haus})}
+  \label{fig:defekterfuss}
+\end{figure}
+
+\begin{figure}[!htpb]
+  \centering
+  \begin{forest}
+    [Phonologisches Wort, calign=last
+      [Silbe, calign=last, edge=dashed, tier=ppake
+        [Anfangsrand, ake
+          [b]
+        ]
+        [Reim, tier=pake
+          [Kern, ake
+            [ə]
+          ]
+        ]
+      ]
+      [Fuß, calign=first
+        [Silbe, calign=last, tier=ppake
+          [Anfangsrand, ake
+            [d]
+          ]
+          [Reim, tier=pake
+            [Kern, ake
+              [ɔ͡ʏ]
+            ]
+          ]
+        ]
+        [Silbe, calign=last
+          [Anfangsrand, ake
+            [t]
+          ]
+          [Reim, calign=first
+            [Kern, ake
+              [ʊ]
+            ]
+            [Endrand, ake
+              [ŋ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Phonologisches Wort mit extrametrischer Silbe (\textit{Bedeutung})}
+  \label{fig:extrasilbisch}
+\end{figure}
+
+\paragraph*{Stammbetonung}
+
+An dem Wort \textit{Bedeutung} /bədɔ͡ʏtʊng/ [bə.ˈdɔ͡ʏ.tʊŋ] wurde oben die extrametrische Silbe illustriert.
+Morphologisch ist das Wort komplex, es besteht aus dem Präfix \textit{be:}, de Stamm \textit{deut} und dem Suffix \textit{:ung}.
+Der Akzent liegt hier auf der \textit{Stammsilbe} [dɔ͡ʏ].%
+\footnote{Technisch gesehen liegt die Betonung nicht auf dem Stamm \textit{deut} an sich, da dieser durch die Silbifizierung (Anfangsrandmaximierung) auf zwei Silben [dɔ͡ʏ.tʊŋ] verteilt ist.
+Die Silbe, deren Anfangsrand mit dem Anfang des Stamms zusammenfällt, wird hier Stammsilbe genannt.
+Der unterschied zwischen Stamm und Stammsilbe spielt hier aber im Prinzip kaum eine praktische Rolle.}
+Das Prinzip der Stammbetonung ist überaus wichtig, da im Normalfall in einem Wort immer der Stamm betont wird.
+Genau dadurch kommt es typischerweise zu extrametrischen Silben, zum Beispiel wenn einsilbige nicht akzentuierbare Präfixe vor den Stamm treten (wie in \textit{Bedeutung}) oder wenn Flexions- oder Wortbildungssuffixe hinter den Stamm treten.
+Letzteres ist bei komparierten Adjektiven der Fall, siehe Abbildung~\ref{fig:komparationbetonung}.
+
+\begin{figure}[!htpb]
+  \centering
+  \begin{forest}
+    [Phonologisches Wort, calign=first
+      [Fuß, calign=first
+        [Silbe, calign=last
+          [Anfangsrand, ake, calign=first
+            [b]
+            [l]
+          ]
+          [Reim
+            [Kern, ake
+              [øː]
+            ]
+          ]
+        ]
+        [Silbe, calign=last
+          [Anfangsrand, ake
+            [d]
+          ]
+          [Reim, tier=pake
+            [Kern, ake
+              [ə]
+            ]
+          ]
+        ]
+      ]
+      [Silbe, calign=last, edge=dashed
+        [Anfangsrand, ake
+          [ʁ]
+        ]
+        [Reim, tier=pake
+          [Kern, ake
+            [ə]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+  \caption{Extrametrische Silben und Stammbetonung bei komparierten Adjektiven (\textit{blödere})}
+  \label{fig:komparationbetonung}
+\end{figure}
 
 
+\paragraph*{Komposita, Affixe, Nebenakzente und prosodische Wörter}
 
+Morphologisch komplexe Wörter bringen einige morpho"=phonologische Besonderheiten mit sich.
+Zunächst gilt in Komposita das Prinzip der Stammbetonung.
+Allerdings besteht jedes Kompositum per Definition aus zwei Stämmen.
+Beide werden betont, aber der erste Stamm (der Stamm der Erstglieds) wird stärker betont als der zweite.
+Man spricht vom \textit{Primärakzent} und \textit{Sekundärakzent}.
+Da in jedem phonologischen Wort nur ein Akzent vergeben wird, führen wir die Ebende des \textit{prosodischen Worts} ein.
+Seine Konstituenten sind phonologische Wörter, und innerhalb des prosodischen Worts wird der Primärakzent an das erste phonologische Wort vergeben.
+In der Transkription steht der Tiefakzent [ˌ] für den Nebenakzent, vergleiche \textit{Bundestüte} /bʊndəztytə/ [ˈbʊn.dəs.ˌtyː.tə].
+Grafisch sieht das aus wie in Abbildung~\ref{fig:prosodischeswort}.
 
+\begin{figure}[!htpb]
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{forest}
+      [Prosodisches Wort, calign=first
+        [Phonologisches Wort, calign=first
+          [Fuß, calign=first
+            [Silbe, calign=last
+              [Anfangsrand, ake
+                [b]
+              ]
+              [Reim, calign=first
+                [Kern, ake
+                  [ʊ]
+                ]
+                [Endrand, ake
+                  [n]
+                ]
+              ]
+            ]
+            [Silbe, calign=last
+              [Anfangsrand, ake
+                [d]
+              ]
+              [Reim, calign=first
+                [Kern, ake
+                  [ə]
+                ]
+                [Endrand, ake
+                  [s]
+                ]
+              ]
+            ]
+          ]
+        ]
+        [Phonologisches Wort
+          [Fuß, calign=first
+            [Silbe, calign=last
+              [Anfangsrand, ake
+                [t]
+              ]
+              [Reim
+                [Kern, ake
+                  [yː]
+                ]
+              ]
+            ]
+            [Silbe, calign=last
+              [Anfangsrand, ake
+                [t]
+              ]
+              [Reim
+                [Kern, ake
+                  [ə]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    \end{forest}
+  }
+  \caption{Prosodisches Wort mit Haupt- und Nebenakzent (\textit{Bundestüte})}
+  \label{fig:prosodischeswort}
+\end{figure}
+
+Die Strukturbedingungen der segmentalen Phonologie und der Silbenphonologie wirken nur in phonologischen Wörtern.
+Die Grenze zwischen zwei phonologischen Wörtern in einem prosodischen Wort hat für die segmentale Phonologie und die Silbenphonologie daher denselben Status wie eine Grenze zwischen zwei syntaktischen Wörtern.
+Daher verläuft an der Grenze zwischen zwei phonologischen Wörtern zum Beispiel immer eine Silbengrenze, auch wenn sie zu einem prosodischen Wort gehören.
+In dem Kompositum \textit{Maurerempfang} /ma͡ɔʁəʁɛmp͡făng/ wird zum Beispiel [ˈma͡ɔ.ʁɐ.ˌɛm.p͡făng] und nicht (wie nach den Prinzipien, die im phonologischen Wort gelten, zu erwarten wäre) *[ˈma͡ɔ.ʁə.ˌʁɛm.p͡făng] silbifiziert.
+
+Einige Affixe verhalten sich, was den Akzent angeht, wie Stämme.
+Sie ziehen entweder den Hauptakzent auf sich (Präfixe) oder erhalten einen Nebenakzent (Suffixe).
+Der erste Fall betrifft prominent die Verbpartikeln, auch wenn das Verb nominalisiert wurde, also wird \textit{auf=zieh.en} /a͡ɔft͡siən/ [ˈa͡ɔf.ˌt͡si.ən] und \textit{Aufzug} /a͡ɔft͡sug/ [ˈa͡ɔf.ˌt͡suːk] analysiert.
+Der zweite Fall tritt zum Beispiel beim Movierungssuffix \textit{:in} auf, siehe \textit{Fahrerinnen} /faʁəʁɪnən/ [ˈfaː.ʁə.ˌʁɪṇən].
+Da aber segmentale Prozesse und die Silbifizierung wie im phonologischen Wort ablaufen, können wir hier nicht von zwei phonologischen Wörtern ausgehen.
+Wären es zwei phonologische Wörter, müsste es *[ˈfaː.ʁɐ.ˌɪṇən] (wie \textit{Fahrer innen}) lauten.
